@@ -1,21 +1,12 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { View, Text } from "react-native";
 
-export default function App() {
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>nice</Text>
-
-      <StatusBar style="auto" />
+    <View>
+      <Text>Weather App</Text>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+export default App;
