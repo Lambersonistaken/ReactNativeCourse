@@ -3,9 +3,11 @@ import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <Text>ReactNative</Text>
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text style={{ color: "white", fontWeight: "700", fontSize: 36 }}>
+          Hello React Native
+        </Text>
         <StatusBar style="auto" />
       </View>
     </SafeAreaView>
@@ -15,7 +17,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "orange",
+    backgroundColor: "pink",
     alignItems: "center",
     justifyContent: "center",
   },
