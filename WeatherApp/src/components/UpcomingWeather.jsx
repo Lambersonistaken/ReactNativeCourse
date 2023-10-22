@@ -52,8 +52,13 @@ const Item = (props) => {
   const { dt_txt, min, max, condition } = props;
   return (
     <View style={styles.item}>
-      <Feather name="sun" size={50} color="white" />
-      <Text>{dt_txt}</Text>
+      <Feather
+        style={{ marginBottom: 20 }}
+        name="sun"
+        size={50}
+        color="white"
+      />
+      <Text style={styles.date}>{dt_txt}</Text>
       <Text style={styles.temp}>{min}</Text>
       <Text style={styles.temp}>{max}</Text>
     </View>
@@ -73,7 +78,7 @@ function UpcomingWeather() {
   };
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Upcoming Weather</Text>
+      <Text style={styles.title}>Upcoming Weather</Text>
       <FlatList
         data={DATA}
         renderItem={renderItem}
@@ -106,6 +111,18 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "#fff",
+  },
+  date: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#fff",
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: "bold",
+    color: "#fff",
+    marginTop: 16,
+    marginBottom: 16,
   },
 });
 
