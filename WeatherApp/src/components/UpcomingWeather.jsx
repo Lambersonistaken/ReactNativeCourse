@@ -67,7 +67,11 @@ function UpcomingWeather() {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Upcoming Weather</Text>
-      <FlatList data={DATA} renderItem={renderItem}></FlatList>
+      <FlatList
+        data={DATA}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.dt_txt}
+      ></FlatList>
     </SafeAreaView>
   );
 }
