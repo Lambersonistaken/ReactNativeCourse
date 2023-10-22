@@ -1,5 +1,12 @@
 import React from "react";
-import { SafeAreaView, View, StyleSheet, Text, FlatList } from "react-native";
+import {
+  SafeAreaView,
+  View,
+  StyleSheet,
+  Text,
+  FlatList,
+  StatusBar,
+} from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 const DATA = [
@@ -44,11 +51,11 @@ const DATA = [
 const Item = (props) => {
   const { dt_txt, min, max, condition } = props;
   return (
-    <View>
+    <View style={styles.item}>
       <Feather name="sun" size={50} color="white" />
       <Text>{dt_txt}</Text>
-      <Text>{min}</Text>
-      <Text>{max}</Text>
+      <Text style={styles.temp}>{min}</Text>
+      <Text style={styles.temp}>{max}</Text>
     </View>
   );
 };
@@ -79,6 +86,26 @@ function UpcomingWeather() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
+    marginTop: StatusBar.currentHeight || 0,
+    backgroundColor: "#a2d2ff",
+  },
+  item: {
+    backgroundColor: "#ffafcc",
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-around",
+    borderRadius: 16,
+    borderWidth: 4,
+    borderColor: "#cdb4db",
+  },
+  temp: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#fff",
   },
 });
 
