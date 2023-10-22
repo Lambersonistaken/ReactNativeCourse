@@ -85,6 +85,10 @@ function UpcomingWeather() {
         renderItem={renderItem}
         keyExtractor={(item) => item.dt_txt}
       ></FlatList>
+      <Image
+        style={{ height: 200, width: 300, bottom: "10%" }}
+        source={require("../../assets/1.jpg")}
+      ></Image>
     </SafeAreaView>
   );
 }
