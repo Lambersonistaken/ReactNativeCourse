@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import CurrentWeather from "./src/components/CurrentWeather";
 import UpcomingWeather from "./src/components/UpcomingWeather";
 import { StatusBar } from "expo-status-bar";

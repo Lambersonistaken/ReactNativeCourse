@@ -6,6 +6,7 @@ import {
   Text,
   FlatList,
   StatusBar,
+  Image,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
@@ -100,9 +101,10 @@ const styles = StyleSheet.create({
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
-    flexDirection: "column",
-    alignItems: "center",
+    paddingHorizontal: 32,
+    flexDirection: "row",
     justifyContent: "space-around",
+    alignItems: "center",
     borderRadius: 16,
     borderWidth: 4,
     borderColor: "#cdb4db",
@@ -111,11 +113,13 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "#fff",
+    marginLeft: "5%",
   },
   date: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#fff",
+    marginLeft: "5%",
   },
   title: {
     fontSize: 32,
