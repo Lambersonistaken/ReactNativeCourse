@@ -4,17 +4,20 @@ import { Feather } from "@expo/vector-icons";
 
 export default function ListItem(props) {
   const { dt_txt, min, max, condition } = props;
+
+  const { item, temp, date } = styles;
+
   return (
-    <View style={styles.item}>
+    <View style={item}>
       <Feather
         style={{ marginBottom: 20 }}
         name="sun"
         size={50}
         color="white"
       />
-      <Text style={styles.date}>{dt_txt}</Text>
-      <Text style={styles.temp}>{min}</Text>
-      <Text style={styles.temp}>{max}</Text>
+      <Text style={date}>{dt_txt}</Text>
+      <Text style={temp}>{min}</Text>
+      <Text style={temp}>{max}</Text>
     </View>
   );
 }
@@ -49,17 +52,5 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#fff",
     marginLeft: "5%",
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: "bold",
-    color: "#fff",
-    marginTop: 16,
-    marginBottom: 16,
-    textAlign: "center",
-  },
-  image: {
-    flex: 1,
-    resizeMode: "cover",
   },
 });
