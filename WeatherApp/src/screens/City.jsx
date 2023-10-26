@@ -1,8 +1,18 @@
 import React from "react";
-import { View } from "react-native";
+import { View, SafeAreaView, Text, StyleSheet } from "react-native";
 
 function City() {
-  return <View></View>;
+  const { container } = styles;
+  return (
+    <SafeAreaView style={container}>
+      <Text>City</Text>
+    </SafeAreaView>
+  );
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 export default City;
