@@ -2,11 +2,12 @@ import React from "react";
 import { View, StyleSheet, Image } from "react-native";
 import CurrentWeather from "./src/screens/CurrentWeather";
 import UpcomingWeather from "./src/screens/UpcomingWeather";
+import City from "./src/screens/City";
 
 function App() {
   return (
     <View style={styles.container}>
-      <UpcomingWeather />
+      <City />
     </View>
   );
 }
