@@ -5,9 +5,9 @@ import {
   Text,
   StyleSheet,
   ImageBackground,
-  View,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { Feather } from "@expo/vector-icons";
 
 function City() {
   const { container, imageLayout, cityName, countryName, cityText } = styles;
@@ -19,6 +19,16 @@ function City() {
       >
         <Text style={[cityName, cityText]}>London</Text>
         <Text style={[countryName, cityText]}>UK</Text>
+        <View style={styles.populationWrapper}>
+          <Feather name={"user"} size={50} color={"white"} />
+          <Text style={styles.populationText}>8000</Text>
+        </View>
+        <View>
+          <Feather name={"sunrise"} size={50} color={"white"} />
+          <Text>10:46:58 am</Text>
+          <Feather name={"sunset"} size={50} color={"white"} />
+          <Text>17:28:15 pm</Text>
+        </View>
       </ImageBackground>
     </SafeAreaView>
   );
@@ -46,6 +56,18 @@ const styles = StyleSheet.create({
     color: "white",
     alignSelf: "center",
     justifyContent: "center",
+  },
+  populationWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 30,
+  },
+  populationText: {
+    fontSize: 30,
+    color: "white",
+    fontWeight: "bold",
+    marginLeft: 10,
   },
 });
 export default City;
