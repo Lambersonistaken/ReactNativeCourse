@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Feather } from "@expo/vector-icons";
+import IconText from "../components/IconText";
 
 function City() {
   const { container, imageLayout, cityName, countryName, cityText } = styles;
@@ -20,14 +21,18 @@ function City() {
         <Text style={[cityName, cityText]}>London</Text>
         <Text style={[countryName, cityText]}>UK</Text>
         <View style={styles.populationWrapper}>
-          <Feather name={"user"} size={50} color={"white"} />
-          <Text style={styles.populationText}>8000</Text>
+          <IconText
+            iconName={"user"}
+            text={"8000"}
+            iconColor={"white"}
+            bodyTextStyles={styles.populationText}
+          />
         </View>
         <View style={styles.riseSetWrapper}>
           <Feather name={"sunrise"} size={50} color={"white"} />
           <Text style={styles.riseSetText}>10:46:58 am</Text>
           <Feather
-            style={{ marginTop: 20 }}
+            style={{ marginLeft: 10 }}
             name={"sunset"}
             size={50}
             color={"white"}
@@ -63,7 +68,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   populationWrapper: {
-    flexDirection: "row",
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     marginTop: 30,
@@ -71,19 +76,18 @@ const styles = StyleSheet.create({
   populationText: {
     fontSize: 30,
     color: "white",
-    fontWeight: "bold",
     marginLeft: 10,
   },
   riseSetWrapper: {
-    flexDirection: "column",
+    flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 30,
+    marginLeft: 10,
+    marginTop: 0,
   },
   riseSetText: {
     fontSize: 20,
     color: "white",
-    fontWeight: "bold",
     marginLeft: 10,
   },
 });
