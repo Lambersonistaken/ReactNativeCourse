@@ -23,11 +23,16 @@ function City() {
           <Feather name={"user"} size={50} color={"white"} />
           <Text style={styles.populationText}>8000</Text>
         </View>
-        <View>
+        <View style={styles.riseSetWrapper}>
           <Feather name={"sunrise"} size={50} color={"white"} />
-          <Text>10:46:58 am</Text>
-          <Feather name={"sunset"} size={50} color={"white"} />
-          <Text>17:28:15 pm</Text>
+          <Text style={styles.riseSetText}>10:46:58 am</Text>
+          <Feather
+            style={{ marginTop: 20 }}
+            name={"sunset"}
+            size={50}
+            color={"white"}
+          />
+          <Text style={styles.riseSetText}>17:28:15 pm</Text>
         </View>
       </ImageBackground>
     </SafeAreaView>
@@ -65,6 +70,18 @@ const styles = StyleSheet.create({
   },
   populationText: {
     fontSize: 30,
+    color: "white",
+    fontWeight: "bold",
+    marginLeft: 10,
+  },
+  riseSetWrapper: {
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 30,
+  },
+  riseSetText: {
+    fontSize: 20,
     color: "white",
     fontWeight: "bold",
     marginLeft: 10,
