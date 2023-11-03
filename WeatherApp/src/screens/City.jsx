@@ -29,15 +29,19 @@ function City() {
           />
         </View>
         <View style={styles.riseSetWrapper}>
-          <Feather name={"sunrise"} size={50} color={"white"} />
-          <Text style={styles.riseSetText}>10:46:58 am</Text>
-          <Feather
-            style={{ marginLeft: 10 }}
-            name={"sunset"}
-            size={50}
-            color={"white"}
+          <IconText
+            iconName={"sunrise"}
+            text={"10:46:58 am"}
+            iconColor={"white"}
+            bodyTextStyles={styles.riseSetText}
           />
-          <Text style={styles.riseSetText}>17:28:15 pm</Text>
+
+          <IconText
+            iconName={"sunset"}
+            iconColor={"white"}
+            text={"17:28:15 pm"}
+            bodyTextStyles={styles.riseSetText}
+          />
         </View>
       </ImageBackground>
     </SafeAreaView>
@@ -76,19 +80,18 @@ const styles = StyleSheet.create({
   populationText: {
     fontSize: 30,
     color: "white",
-    marginLeft: 10,
+    marginLeft: 20,
   },
   riseSetWrapper: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-around",
     marginLeft: 10,
     marginTop: 0,
   },
   riseSetText: {
     fontSize: 20,
     color: "white",
-    marginLeft: 10,
   },
 });
 export default City;

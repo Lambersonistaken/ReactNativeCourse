@@ -5,7 +5,12 @@ import { Feather } from "@expo/vector-icons";
 function IconText({ iconName, text, iconColor, bodyTextStyles }) {
   return (
     <View>
-      <Feather name={iconName} size={50} color={iconColor} />
+      <Feather
+        name={iconName}
+        size={50}
+        style={{ marginLeft: 30 }}
+        color={iconColor}
+      />
       <Text style={[styles.textTheme, bodyTextStyles]}>{text}</Text>
     </View>
   );
