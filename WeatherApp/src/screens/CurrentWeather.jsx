@@ -1,25 +1,31 @@
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { Fontisto } from "@expo/vector-icons";
+import RowText from "../components/RowText";
 
 export default function CurrentWeather() {
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.container}>
+        <Fontisto name="cloudy-gusts" size={100} color="black" />
         <Text style={styles.title}>Current Weather</Text>
         <Text style={styles.subtext}>6</Text>
         <Text style={styles.subtext}>Feels like 5</Text>
-
-        <View style={styles.highLowWrapper}>
-          <Text style={styles.subtext}>High: 8</Text>
-          <Text style={styles.subtext}>Low: 6</Text>
-        </View>
+        <RowText
+          messageOne={"High: 8"}
+          messageTwo={"Low: 6"}
+          containerStyle={styles.highLowWrapper}
+          messageOneStyle={styles.subtext}
+          messageTwoStyle={styles.subtext}
+        />
       </View>
-      <View style={styles.bodyWrapper}>
-        <Fontisto name="cloudy-gusts" size={100} color="black" />
-        <Text style={styles.subtext2}>Cloudy</Text>
-        <Text style={styles.subtext2}>Wind: 10km/h</Text>
-      </View>
+      <RowText
+        messageOne={"Cloudy"}
+        messageTwo={"Wind: 10km/h"}
+        containerStyle={styles.bodyWrapper}
+        messageOneStyle={styles.subtext2}
+        messageTwoStyle={styles.subtext2}
+      />
 
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -31,6 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 24,
     textAlign: "center",
+    alignItems: "center",
   },
   wrapper: {
     backgroundColor: "#eadee0",
@@ -64,7 +71,8 @@ const styles = StyleSheet.create({
   },
   highLowWrapper: {
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
+    width: "100%",
   },
   bodyWrapper: {
     justifyContent: "center",

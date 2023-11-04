@@ -7,7 +7,7 @@ import City from "./src/screens/City";
 function App() {
   return (
     <View style={styles.container}>
-      <City />
+      <CurrentWeather />
     </View>
   );
 }

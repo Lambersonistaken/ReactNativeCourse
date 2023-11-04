@@ -7,11 +7,21 @@ import {
   ImageBackground,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { Feather } from "@expo/vector-icons";
 import IconText from "../components/IconText";
 
 function City() {
-  const { container, imageLayout, cityName, countryName, cityText } = styles;
+  const {
+    container,
+    imageLayout,
+    cityName,
+    countryName,
+    cityText,
+    rowLayout,
+    riseSetText,
+    riseSetWrapper,
+    populationWrapper,
+    populationText,
+  } = styles;
   return (
     <SafeAreaView style={container}>
       <ImageBackground
@@ -20,27 +30,27 @@ function City() {
       >
         <Text style={[cityName, cityText]}>London</Text>
         <Text style={[countryName, cityText]}>UK</Text>
-        <View style={styles.populationWrapper}>
+        <View style={[populationWrapper, rowLayout]}>
           <IconText
             iconName={"user"}
             text={"8000"}
             iconColor={"white"}
-            bodyTextStyles={styles.populationText}
+            bodyTextStyles={populationText}
           />
         </View>
-        <View style={styles.riseSetWrapper}>
+        <View style={[riseSetWrapper, rowLayout]}>
           <IconText
             iconName={"sunrise"}
             text={"10:46:58 am"}
             iconColor={"white"}
-            bodyTextStyles={styles.riseSetText}
+            bodyTextStyles={riseSetText}
           />
 
           <IconText
             iconName={"sunset"}
             iconColor={"white"}
             text={"17:28:15 pm"}
-            bodyTextStyles={styles.riseSetText}
+            bodyTextStyles={riseSetText}
           />
         </View>
       </ImageBackground>
@@ -72,8 +82,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   populationWrapper: {
-    flexDirection: "column",
-    alignItems: "center",
     justifyContent: "center",
     marginTop: 30,
   },
@@ -83,8 +91,6 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   riseSetWrapper: {
-    flexDirection: "row",
-    alignItems: "center",
     justifyContent: "space-around",
     marginLeft: 10,
     marginTop: 0,
@@ -92,6 +98,10 @@ const styles = StyleSheet.create({
   riseSetText: {
     fontSize: 20,
     color: "white",
+  },
+  rowLayout: {
+    flexDirection: "row",
+    alignItems: "center",
   },
 });
 export default City;
