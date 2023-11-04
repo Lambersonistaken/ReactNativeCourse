@@ -4,27 +4,36 @@ import { Fontisto } from "@expo/vector-icons";
 import RowText from "../components/RowText";
 
 export default function CurrentWeather() {
+  const {
+    wrapper,
+    container,
+    title,
+    subtext,
+    subtext2,
+    highLowWrapper,
+    bodyWrapper,
+  } = styles;
   return (
-    <SafeAreaView style={styles.wrapper}>
-      <View style={styles.container}>
+    <SafeAreaView style={wrapper}>
+      <View style={container}>
         <Fontisto name="cloudy-gusts" size={100} color="black" />
-        <Text style={styles.title}>Current Weather</Text>
-        <Text style={styles.subtext}>6</Text>
-        <Text style={styles.subtext}>Feels like 5</Text>
+        <Text style={title}>Current Weather</Text>
+        <Text style={subtext}>6</Text>
+        <Text style={subtext}>Feels like 5</Text>
         <RowText
           messageOne={"High: 8"}
           messageTwo={"Low: 6"}
-          containerStyle={styles.highLowWrapper}
-          messageOneStyle={styles.subtext}
-          messageTwoStyle={styles.subtext}
+          containerStyle={highLowWrapper}
+          messageOneStyle={subtext}
+          messageTwoStyle={subtext}
         />
       </View>
       <RowText
         messageOne={"Cloudy"}
         messageTwo={"Wind: 10km/h"}
-        containerStyle={styles.bodyWrapper}
-        messageOneStyle={styles.subtext2}
-        messageTwoStyle={styles.subtext2}
+        containerStyle={bodyWrapper}
+        messageOneStyle={subtext2}
+        messageTwoStyle={subtext2}
       />
 
       <StatusBar style="auto" />
