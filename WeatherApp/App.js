@@ -1,5 +1,4 @@
 import React from "react";
-import { View, StyleSheet, Image } from "react-native";
 import CurrentWeather from "./src/screens/CurrentWeather";
 import UpcomingWeather from "./src/screens/UpcomingWeather";
 import City from "./src/screens/City";
@@ -12,18 +11,12 @@ function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <View style={styles.container}>
-          <CurrentWeather />
-        </View>
+        <Tab.Screen name={"Current"} component={CurrentWeather} />
+        <Tab.Screen name={"Upcoming"} component={UpcomingWeather} />
+        <Tab.Screen name={"City"} component={City} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
