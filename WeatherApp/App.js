@@ -4,13 +4,18 @@ import CurrentWeather from "./src/screens/CurrentWeather";
 import UpcomingWeather from "./src/screens/UpcomingWeather";
 import City from "./src/screens/City";
 import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+const Tab = createBottomTabNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <View style={styles.container}>
-        <CurrentWeather />
-      </View>
+      <Tab.Navigator>
+        <View style={styles.container}>
+          <CurrentWeather />
+        </View>
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
