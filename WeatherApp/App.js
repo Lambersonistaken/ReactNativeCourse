@@ -29,8 +29,32 @@ function App() {
             ),
           }}
         />
-        <Tab.Screen name={"Upcoming"} component={UpcomingWeather} />
-        <Tab.Screen name={"City"} component={City} />
+        <Tab.Screen
+          name={"Upcoming"}
+          component={UpcomingWeather}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <Feather
+                name={"clock"}
+                size={25}
+                color={focused ? "tomato" : "black"}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name={"City"}
+          component={City}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <Feather
+                name={"home"}
+                size={25}
+                color={focused ? "tomato" : "black"}
+              />
+            ),
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
