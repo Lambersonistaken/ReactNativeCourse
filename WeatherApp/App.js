@@ -16,7 +16,19 @@ function App() {
           tabBarInactiveTintColor: "gray",
         }}
       >
-        <Tab.Screen name={"Current"} component={CurrentWeather} />
+        <Tab.Screen
+          name={"Current"}
+          component={CurrentWeather}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <Feather
+                name={"droplet"}
+                size={25}
+                color={focused ? "tomato" : "black"}
+              />
+            ),
+          }}
+        />
         <Tab.Screen name={"Upcoming"} component={UpcomingWeather} />
         <Tab.Screen name={"City"} component={City} />
       </Tab.Navigator>
